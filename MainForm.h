@@ -1,6 +1,10 @@
 #pragma once
-
-namespace Testing1 {
+#include "MainForm.h"
+#include <iostream>
+#include <map>
+#include <SDL_iostream.h>
+#include <stdio.h>
+#include <string>
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -35,15 +39,17 @@ namespace Testing1 {
 			}
 		}
 	private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
-	protected:
 	private: System::Windows::Forms::Button^ button2;
+
+	protected:
+
 	private: System::Windows::Forms::Button^ button1;
 
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -53,8 +59,8 @@ namespace Testing1 {
 		void InitializeComponent(void)
 		{
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->tableLayoutPanel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -73,6 +79,16 @@ namespace Testing1 {
 			this->tableLayoutPanel1->Size = System::Drawing::Size(200, 221);
 			this->tableLayoutPanel1->TabIndex = 0;
 			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(3, 115);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(194, 103);
+			this->button2->TabIndex = 1;
+			this->button2->Text = L"EXIT";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MainForm::button2_Click);
+			// 
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(3, 3);
@@ -81,16 +97,7 @@ namespace Testing1 {
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"PLAY";
 			this->button1->UseVisualStyleBackColor = true;
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(3, 115);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(194, 103);
-			this->button2->TabIndex = 1;
-			this->button2->Text = L"button2";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &MainForm::button2_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &MainForm::button1_Click);
 			// 
 			// MainForm
 			// 
@@ -108,5 +115,8 @@ namespace Testing1 {
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		Close();
 	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+
 	};
-}
+
