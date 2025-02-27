@@ -1,4 +1,5 @@
 #pragma once
+#include "Form.h"
 #include "MainForm.h"
 #include <iostream>
 #include <map>
@@ -6,8 +7,10 @@
 #include <stdio.h>
 #include <string>
 
+struct node {
 
-
+	node* MainForm;
+};
 
 using namespace std;
 

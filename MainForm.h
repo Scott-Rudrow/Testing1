@@ -1,5 +1,7 @@
 #pragma once
 #include "MainForm.h"
+#include "Form.h"
+#include <SDL.h>
 #include <iostream>
 #include <map>
 #include <SDL_iostream.h>
@@ -16,8 +18,8 @@
 	/// <summary>
 	/// Summary for MainForm
 	/// </summary>
-	public ref class MainForm : public System::Windows::Forms::Form
-	{
+public ref class MainForm : public System::Windows::Forms::Form
+{
 	public:
 		MainForm(void)
 		{
@@ -56,8 +58,8 @@
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		void InitializeComponent(void)
-		{
+	void InitializeComponent(void)
+	{
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -110,13 +112,15 @@
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
-		}
-#pragma endregion
+	}
+	#pragma endregion
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		Close();
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		Form();
 	}
 
-	};
 
+};
+	
