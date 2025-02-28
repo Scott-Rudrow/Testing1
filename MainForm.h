@@ -1,12 +1,20 @@
 #pragma once
 #include "MainForm.h"
-#include "Form.h"
+//#include "Form.h"
 #include <SDL.h>
 #include <iostream>
 #include <map>
 #include <SDL_iostream.h>
 #include <stdio.h>
 #include <string>
+#include <array>
+
+
+
+int Sword()
+{
+	return 0;
+}
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -18,8 +26,8 @@
 	/// <summary>
 	/// Summary for MainForm
 	/// </summary>
-public ref class MainForm : public System::Windows::Forms::Form
-{
+	public ref class MainForm : public System::Windows::Forms::Form
+	{
 	public:
 		MainForm(void)
 		{
@@ -58,8 +66,8 @@ public ref class MainForm : public System::Windows::Forms::Form
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-	void InitializeComponent(void)
-	{
+		void InitializeComponent(void)
+		{
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -71,8 +79,8 @@ public ref class MainForm : public System::Windows::Forms::Form
 			this->tableLayoutPanel1->ColumnCount = 1;
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
 				50)));
-			this->tableLayoutPanel1->Controls->Add(this->button2, 0, 1);
 			this->tableLayoutPanel1->Controls->Add(this->button1, 0, 0);
+			this->tableLayoutPanel1->Controls->Add(this->button2, 0, 1);
 			this->tableLayoutPanel1->Location = System::Drawing::Point(419, 157);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 2;
@@ -112,15 +120,15 @@ public ref class MainForm : public System::Windows::Forms::Form
 			this->tableLayoutPanel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
+		}
+#pragma endregion
+		private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+			Close();
+		}
+		private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+			Form^ newForm = gcnew Form();
+			newForm->Show();
+			this->Hide();
+		}
 	}
-	#pragma endregion
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		Close();
-	}
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		Form();
-	}
-
-
-};
-	
+;

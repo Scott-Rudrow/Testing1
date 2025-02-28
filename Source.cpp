@@ -1,5 +1,5 @@
 #pragma once
-#include "Form.h"
+//#include "Form.h"
 #include "MainForm.h"
 #include <iostream>
 #include <map>
@@ -7,10 +7,7 @@
 #include <stdio.h>
 #include <string>
 
-struct node {
 
-	node* MainForm;
-};
 
 using namespace std;
 
@@ -50,22 +47,23 @@ AppConfig* AppConfig::instance = nullptr;
 
 
 
-int main() {
 
+
+int main(void** appstate, int argc, char* argv[]) 
+{
 	AppConfig* config = AppConfig::getInstance();
 	config->set("appTitle", "AlienWar");
 
 	AppConfig* config2 = AppConfig::getInstance();
 	config->set("appVersion", "0.0.1");
 
-	cout << "Welcome to " << config2->get("appTitle")
-		<< "Version " << config->get("appVersion") << ")" << endl;
+	std::cout << "Welcome to " << config2->get("appTitle")
+		<< " Version " << config->get("appVersion") << ")" << std::endl;
 	
 	
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
 
-	// Create the main window and run it   
 	Application::Run(gcnew MainForm());
 	return 0;
 };
